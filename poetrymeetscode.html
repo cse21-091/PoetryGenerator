@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poetry & Coding</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #2980b9, #6dd5fa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 500px;
+      margin: 20px;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    #poemContainer {
+      margin-top: 20px;
+    }
+
+    .poemLine {
+      font-size: 20px;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #4caf50;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    .contact-details {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .contact-platform {
+      color: #885df1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to the world of Poetry & Coding</h1>
+    </header>
+      
+    <main>
+      <section>
+        <h2>Express Your Creativity</h2>
+        <p>Create and discover the beauty of blending words and technology with the power of coding.</p>
+        <div id="poemContainer">
+          <span class="poemLine">Roses are red,</span><br>
+          <span class="poemLine">Violets are blue,</span><br>
+          <span class="poemLine">Coding is my passion,</span><br>
+          <span class="poemLine">And poetry, too.</span>
+        </div>
+      </section>
+      <section>
+        <h2>Write Your Own Poem</h2>
+        <textarea id="poemInput" placeholder="Write your poem here..."></textarea>
+        <button id="generateButton">Generate</button>
+      </section>
+    </main>
+    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/181/original/tech.png?1686481920" alt="Tech Image">
+
+    <div class="contact-details">
+      <span class="contact-platform">G-mail:</span> mildredmalope7@gmail.com<br>
+      <span class="contact-platform">LinkedIn:</span> <a href="https://www.linkedin.com/in/kelebogile-mildred-malope-49aab022b/">https://www.linkedin.com/in/kelebogile-mildred-malope-49aab022b/</a><br>
+      <span class="contact-platform">SheCodes:</span> <a href="https://www.shecodes.io/graduates/84574-kelebogile-mildred-malope">https://www.shecodes.io/graduates/84574-kelebogile-mildred-malope</a><br>
+      <span class="contact-platform">GitHub:</span> <a href="https://github.com/KelebogileMildredMalope7">https://github.com/KelebogileMildredMalope7</a>
+    </div>
+
+    <script>
+      // Welcome message
+      let name = prompt('What is your name?');
+      if (name !== null) {
+        alert('Nice to meet you, ' + name + '! Enjoy the poetry and coding.');
+      }
+
+      // Generate button
+      const generateButton = document.getElementById('generateButton');
+      generateButton.addEventListener('click', function() {
+        // Get the value of the poem input
+        const poemInput = document.getElementById('poemInput');
+        const poemText = poemInput.value;
+        // Check if the poem is empty
+        if (poemText.trim() === '') {
+          alert('Please enter a poem!');
+        } else {
+          // Split the poem into lines
+          const poemLines = poemText.split('\n');
+          // Clear the existing poem lines
+          const poemContainer = document.getElementById('poemContainer');
+          poemContainer.innerHTML = '';
+          // Display the generated poem lines
+          poemLines.forEach(function(line) {
+            const span = document.createElement('span');
+            span.classList.add('poemLine');
+            span.textContent = line;
+            poemContainer.appendChild(span);
+            poemContainer.appendChild(document.createElement('br'));
+          });
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
+-
